@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #container{
+            position: relative;
+        }
+        #clock{
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%,-50% );
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div id="clock">
+            <h2>Digital Clock</h2>
+            <span id="hour">00</span><span>:</span>
+            <span id="minute">00</span><span>:</span>
+            <span id="second">00</span>
+            <span id="am-pm">AM</span>
+        </div>
+       
+       
+    </div>
+    <script>
+       
+
+       setInterval(function(){
+        let d = new Date();
+           let hh = d.getHours();
+           let mm = d.getMinutes();
+           let ss = d.getSeconds();
+           document.getElementById('hour').innerHTML= hh;     
+           document.getElementById('minute').innerHTML= mm;     
+           document.getElementById('second').innerHTML= ss; 
+
+           if(hh>=12){
+                   document.getElementById('am-pm').innerHTML = "PM";
+
+           }else{
+            document.getElementById('am-pm').innerHTML = "AM";
+           }
+           if(hh>12){
+            hh = hh-12;
+
+           }
+       },1000)
+               
+
+
+    
+        
+       
+     
+
+    </script>
+</body>
+</html>
